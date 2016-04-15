@@ -47,7 +47,17 @@ namespace BDEReplacement
         {
             var config = ConfigurationManager.AppSettings;
             BDEAliasesFile aliasFile = new BDEAliasesFile(config.Get("bdeAliasesFile"));
-            aliasFile.UpdateAlias(currentName, currentPath, nameTextBox.Text, pathTextBox.Text, enableBCD.Checked);
+            string name = nameTextBox.Text;
+            string path = pathTextBox.Text;
+            bool enableBCD = enableBCDCheckBox.Checked;
+            if (aliasList.SelectedIndex > -1)
+            {
+                aliasFile.UpdateAlias(currentName, currentPath, name, path, enableBCD);
+            } else
+            {
+                aliasFile.CreateNewAlias(name, path, enableBCD);
+            }
+            
             loadAliases();
         }
 
@@ -64,27 +74,32 @@ namespace BDEReplacement
 
         private void aliasList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentName = aliasList.SelectedItem.ToString() ?? "";
-            if (currentName != "")
+            if (aliasList.SelectedIndex > -1)
             {
-                nameTextBox.Text = currentName;
-                foreach (var alias in aliases)
+                currentName = aliasList.SelectedItem.ToString() ?? "";
+                if (currentName != "")
                 {
-                    if (alias.name == currentName)
+                    nameTextBox.Text = currentName;
+                    foreach (var alias in aliases)
                     {
-                        currentPath = alias.path;
-                        pathTextBox.Text = currentPath;
-                        enableBCD.Checked = alias.enableBCD;
-                        break;
+                        if (alias.name == currentName)
+                        {
+                            currentPath = alias.path;
+                            pathTextBox.Text = currentPath;
+                            enableBCDCheckBox.Checked = alias.enableBCD;
+                            break;
+                        }
                     }
-                }
 
+                }
             }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            aliasList.ClearSelected();
+            nameTextBox.Text = "";
+            pathTextBox.Text = "";
         }
     }
 }

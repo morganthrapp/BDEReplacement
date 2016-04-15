@@ -39,7 +39,7 @@
             this.pathLabel = new System.Windows.Forms.Label();
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.pathButton = new System.Windows.Forms.Button();
-            this.enableBCD = new System.Windows.Forms.CheckBox();
+            this.enableBCDCheckBox = new System.Windows.Forms.CheckBox();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,39 +127,39 @@
             // 
             this.pathTextBox.Location = new System.Drawing.Point(201, 61);
             this.pathTextBox.Name = "pathTextBox";
-            this.pathTextBox.Size = new System.Drawing.Size(247, 20);
+            this.pathTextBox.Size = new System.Drawing.Size(215, 20);
             this.pathTextBox.TabIndex = 7;
             // 
             // pathButton
             // 
             this.pathButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pathButton.Location = new System.Drawing.Point(422, 62);
+            this.pathButton.Location = new System.Drawing.Point(422, 61);
             this.pathButton.Name = "pathButton";
-            this.pathButton.Size = new System.Drawing.Size(25, 18);
+            this.pathButton.Size = new System.Drawing.Size(25, 20);
             this.pathButton.TabIndex = 8;
             this.pathButton.Text = "...";
             this.pathButton.UseVisualStyleBackColor = true;
             this.pathButton.Click += new System.EventHandler(this.pathButton_Click);
             // 
-            // enableBCD
+            // enableBCDCheckBox
             // 
-            this.enableBCD.AutoSize = true;
-            this.enableBCD.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.enableBCD.Cursor = System.Windows.Forms.Cursors.Default;
-            this.enableBCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableBCD.Location = new System.Drawing.Point(138, 97);
-            this.enableBCD.Name = "enableBCD";
-            this.enableBCD.Size = new System.Drawing.Size(111, 20);
-            this.enableBCD.TabIndex = 9;
-            this.enableBCD.Text = "Enable BCD";
-            this.enableBCD.UseVisualStyleBackColor = true;
+            this.enableBCDCheckBox.AutoSize = true;
+            this.enableBCDCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.enableBCDCheckBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.enableBCDCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableBCDCheckBox.Location = new System.Drawing.Point(138, 97);
+            this.enableBCDCheckBox.Name = "enableBCDCheckBox";
+            this.enableBCDCheckBox.Size = new System.Drawing.Size(111, 20);
+            this.enableBCDCheckBox.TabIndex = 9;
+            this.enableBCDCheckBox.Text = "Enable BCD";
+            this.enableBCDCheckBox.UseVisualStyleBackColor = true;
             // 
             // BDEForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 449);
-            this.Controls.Add(this.enableBCD);
+            this.Controls.Add(this.enableBCDCheckBox);
             this.Controls.Add(this.pathButton);
             this.Controls.Add(this.pathTextBox);
             this.Controls.Add(this.pathLabel);
@@ -191,7 +191,7 @@
         private System.Windows.Forms.Button pathButton;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.CheckBox enableBCD;
+        private System.Windows.Forms.CheckBox enableBCDCheckBox;
     }
 }
 
