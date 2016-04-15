@@ -1,0 +1,9 @@
+C:\Users\mpthrapp\AppData\Local\VirtualStore\Program Files (x86)\Common Files\Borland Shared\BDE\idapi32.cfg
+That file controls the BDE alises. It's possible to rewrite them.
+Layout: 0300 0000 {name} 0001 0003 0000 0044 4220 494E 464F 0001 0003 0001 0054 5950 4500 0400 5354 514E 4441
+        5244 0003 0001 0050 4154 4800 0400 {path} 0003 0001 0045 4E41 424C 4520 4243 4400 0400 {enable BCD}00
+        0300 0100 4445 4641 554C 5420 4452 4956 4552 0004 0044 4241 5345 0002 0002 00
+EnableBCD: False = 4641 4C53 45, True = 5452 5545
+File ends with 0200. To write a new alias, we'll have to seek back 2 bytes.
+
+        
