@@ -53,7 +53,7 @@
     <Compile Include="Forms\BDEForm.Designer.cs">
       <DependentUpon>BDEForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BDEConfigFile.cs" />
+    <Compile Include="BDEAliasesFile.cs" />
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>

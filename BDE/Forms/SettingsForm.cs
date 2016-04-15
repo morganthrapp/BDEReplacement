@@ -14,7 +14,7 @@ namespace BDEReplacement.Forms
         private void saveButton_Click(object sender, EventArgs e)
         {
             var config = ConfigurationManager.AppSettings;
-            config.Set("bdeConfigFilePath", configFilePathBox.Text);
+            config.Set("bdeAliases", configFilePathBox.Text);
         }
     }
 }

@@ -39,6 +39,7 @@
             this.pathLabel = new System.Windows.Forms.Label();
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.pathButton = new System.Windows.Forms.Button();
+            this.enableBCD = new System.Windows.Forms.CheckBox();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.aliasList.Name = "aliasList";
             this.aliasList.Size = new System.Drawing.Size(120, 407);
             this.aliasList.TabIndex = 1;
+            this.aliasList.SelectedIndexChanged += new System.EventHandler(this.aliasList_SelectedIndexChanged);
             // 
             // mainMenu
             // 
@@ -76,6 +78,7 @@
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -96,10 +99,10 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(138, 25);
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.nameLabel.Location = new System.Drawing.Point(138, 28);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(55, 20);
+            this.nameLabel.Size = new System.Drawing.Size(49, 17);
             this.nameLabel.TabIndex = 4;
             this.nameLabel.Text = "Name";
             // 
@@ -113,10 +116,10 @@
             // pathLabel
             // 
             this.pathLabel.AutoSize = true;
-            this.pathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pathLabel.Location = new System.Drawing.Point(138, 61);
+            this.pathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.pathLabel.Location = new System.Drawing.Point(138, 64);
             this.pathLabel.Name = "pathLabel";
-            this.pathLabel.Size = new System.Drawing.Size(46, 20);
+            this.pathLabel.Size = new System.Drawing.Size(41, 17);
             this.pathLabel.TabIndex = 6;
             this.pathLabel.Text = "Path";
             // 
@@ -138,11 +141,25 @@
             this.pathButton.UseVisualStyleBackColor = true;
             this.pathButton.Click += new System.EventHandler(this.pathButton_Click);
             // 
+            // enableBCD
+            // 
+            this.enableBCD.AutoSize = true;
+            this.enableBCD.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.enableBCD.Cursor = System.Windows.Forms.Cursors.Default;
+            this.enableBCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableBCD.Location = new System.Drawing.Point(138, 97);
+            this.enableBCD.Name = "enableBCD";
+            this.enableBCD.Size = new System.Drawing.Size(111, 20);
+            this.enableBCD.TabIndex = 9;
+            this.enableBCD.Text = "Enable BCD";
+            this.enableBCD.UseVisualStyleBackColor = true;
+            // 
             // BDEForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 449);
+            this.Controls.Add(this.enableBCD);
             this.Controls.Add(this.pathButton);
             this.Controls.Add(this.pathTextBox);
             this.Controls.Add(this.pathLabel);
@@ -153,6 +170,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "BDEForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.BDEForm_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -173,6 +191,7 @@
         private System.Windows.Forms.Button pathButton;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.CheckBox enableBCD;
     }
 }
 
